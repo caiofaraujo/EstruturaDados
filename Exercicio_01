@@ -1,0 +1,54 @@
+package estruturadados;
+import java.util.Scanner;
+
+/**
+ *
+ * @author caio.faraujo
+ */
+public class Exercicio_01 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int matriz[][];
+        matriz = new int [4][5];   
+        int soma;
+        iniciarMatriz(matriz);
+        imprimirMatriz(matriz);
+        soma = somaPositivos(matriz);
+        System.out.println("Soma: " + soma);
+    }
+    
+    static int[][] iniciarMatriz (int matriz[][]) {
+        Scanner input = new Scanner(System.in);
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.println("Informe o valor [" + i + "]" + "[" + j + "]: ");
+                matriz[i][j] = input.nextInt();
+            }
+        }
+        return matriz;
+    }
+    
+    public static void imprimirMatriz(int matriz[][]) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.println("[" + i + "]" + "[" + j + "]: " + matriz[i][j]);
+            }
+        }
+    }
+    
+    static int somaPositivos(int matriz[][]) {
+        int soma = 0;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (matriz[i][j] % 2 == 0) {
+                    soma += matriz[i][j];
+                }
+            }
+        }
+        return soma;
+    }
+    
+}
