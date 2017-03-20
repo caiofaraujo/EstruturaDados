@@ -1,0 +1,27 @@
+package aula.pkg04.exercício.pkg04;
+import javax.swing.*;
+public class Aula04Exercício04 {
+    public static void main(String[] args) {
+        int mat[][] = new int[4][3];
+        System.out.println("Matriz");
+        for (int i = 0; i < 4; i++) {
+            System.out.println(" ");
+            for (int j = 0; j < 3; j++) {
+                String valor = JOptionPane.showInputDialog(null, "Informe o valor");
+                int v = Integer.parseInt(valor);
+                mat[i][j] = v;
+                System.out.print(v + " ");
+            }
+        }
+        int soma[] = new int[3];
+        for (int x = 0; x < 3; x++) {
+            soma[x] = 0;
+        }
+        for (int j = 0; j < 3; j++) {
+            for (int i = 0; i < 4; i++) {
+                soma[j] = soma[j] + mat[i][j];
+            }
+            JOptionPane.showMessageDialog(null, "A soma da coluna " + (j + 1) +" é " + soma[j]);
+        }
+    }
+}
