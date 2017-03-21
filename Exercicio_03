@@ -1,21 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package estruturadados;
+package EstruturaDados_1;
 import java.util.Scanner;
 /**
  *
  * @author caio.faraujo
  */
 public class Exercicio_03 {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
         int[][] matriz;
         int vetor[] = new int [3];
-        matriz = new int [5][5];       
-        iniciarMatriz(matriz);        
-        System.out.println("Soma: " + vetor);
+        matriz = new int [3][3];       
+        iniciarMatriz(matriz);       
+        int soma[] = new int [3];        
+        soma = soma(matriz);
+        imprimeVetor(soma);
     }
     
     static int[][] iniciarMatriz(int matriz[][]) {
@@ -30,16 +27,21 @@ public class Exercicio_03 {
     }
     
     static int[] soma (int matriz [][]) {
-        int soma[] = {0, 0, 0};
+        int soma[] = {0, 0, 0};         
         
-            for (int j = 0; j < 5 ; j++) {
-                for (int i = 0; i < 5; i++) {
-                    soma[k] = soma[k] + matriz[i][j]; 
-                }
-                System.out.printf("Soma da coluna %d: %d\n", j, soma[k]);
-            }
-        
+         for (int j = 0; j < 3; j++){
+            for (int i = 0; i < 3; i++) {
+                for (int k = 0; k < soma.length; k++) {
+                    soma[k] = soma[k] + matriz[i][j];                               
+                }               
+            }             
+         }
         return soma;
     }
     
+    static void imprimeVetor (int vetor[]) {
+        for (int i = 0; i < vetor.length; i++) {
+            System.out.println("Vetor [" + i + "]: " + vetor[i]);
+        }
+    }
 }
